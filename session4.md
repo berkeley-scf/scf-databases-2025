@@ -4,7 +4,7 @@ layout: default
 title: 'Additional topics (TBD)'
 ---
 
-This session is likely to be either discussion of setting up and administering databases or working with large datasets in a "data lake" context of having many data files without a formal database, focusing on Arrow.
+This session is likely to be either (1) further work with challenging problems aided by ChatBots/LLMs, (2) discussion of setting up and administering databases or (3) working with large datasets in a "data lake" context of having many data files without a formal database, focusing on Arrow.
 
 - [Setting up an SQLite database](https://berkeley-scf.github.io/tutorial-databases/db-management#1-sqlite)
 - [Setting up a PostgreSQL database](https://berkeley-scf.github.io/tutorial-databases/db-management#2-postgresql)

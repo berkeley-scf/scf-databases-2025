@@ -6,7 +6,7 @@ title: 'Databases and SQL workshop'
 
 # Logistics
 
-Time: Saturday January 27, 9-3:30
+Time: Saturday February 1, 9-3:30
 Place: Evans 330
 
 **Note: Evans is accessed by keycard on the weekends. If you don't have keycard access, email Chris and we'll arrange a time for you to be let in.**
@@ -23,16 +23,18 @@ Alternatively, if you have an SCF account you can plan to use one of the SCF mac
 
 ## 1.2 Optional
 
-TBD
+It would be helpful if you had an account (a free plan is fine) with a ChatBot service such as ChatGPT, Claude, or the like. You can also try to use `lmarena.ai`.
 
 # 2 (Approximate) Schedule 
 
 - 9 am - 10 am: (Session 1; optional) review/introduction to databases, database schema and normalization, and very basic SQL syntax
-- 10 am - noon: (Session 2) grouping (group by), joins, set operations, subqueries, pratice problems
-- noon - 1 pm: lunch (pizza provided by the department)
+- 10 am - noon: (Session 2) grouping (group by), joins, set operations, subqueries, practice problems
+- noon - 1 pm: lunch (hopefully provided by the department)
 - 1 pm - 2:30 pm: (Session 3) window functions, practice problems
-- 2:30 pm - 3:30 pm: (Session 4) (tentative, subject to participant interest) database administration demo or data lake/big data/Arrow demo
+- 2:30 pm - 3:30 pm: (Session 4) (tentative, subject to participant interest) challenge problems with ChatBot/LLM assistance, database administration demo or data lake/big data/Arrow demo
 
 # 3 Material
+
+UNDER CONSTRUCTION
 
 The tabs at the top will guide us through the material to be covered in the workshop. We'll be accessing the background material in the [SCF Databases tutorial](https://berkeley-scf.github.io/tutorial-databases), interspersed with time to work on SQL practice problems.
