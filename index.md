@@ -17,9 +17,10 @@ Place: Evans 330
 
 - If you'd like to use Python, install either the `sqlite3` or `duckdb` packages on your laptop.
 - If you'd like to use R, install the `RSQLite` and `duckdb` packages on your laptop.
-- Download [this DuckDB database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021.duckdb), [this alternative DuckDB database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021-oldv.duckdb) and [this SQLite database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021.db) onto your laptop.
+- Download [this DuckDB database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021.duckdb), [this alternative DuckDB database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021-oldv.duckdb) and [this SQLite database file](http://www.stat.berkeley.edu/share/paciorek/stackoverflow-2021.db) onto your laptop (or to your SCF account if you prefer to use SCF machines).
+- Make sure you're able to access the SQLite or DuckDB version of the  database (or both) on your computer (or the SCF) using either [this R code](https://computing.stat.berkeley.edu/tutorial-databases/#61-using-sql-from-r) or [this Python code](https://computing.stat.berkeley.edu/tutorial-databases/#62-using-sql-from-python).
 
-Alternatively, if you have an SCF account you can plan to use one of the SCF machines via ssh or the [SCF Jupyterhub](jupyter.stat.berkeley.edu).
+Alternatively, if you have an SCF account you can plan to use one of the SCF machines via ssh or the [SCF Jupyterhub](jupyter.stat.berkeley.edu). You should still make sure you are set up to access the database (SQLite or DuckDB) using either R or Python.
 
 ## 1.2 Optional
 
