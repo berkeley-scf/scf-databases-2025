@@ -37,6 +37,13 @@ Now consider how you would create database containing multiple tables with this 
      - the topics (tags) associated with each question.
 
    Each question may have zero or more answers and each question has one or more tags indicating what the question is above.
+   
+Here are (most of) the fields for each of the tables:
+
+ - questions: questionid, ownerid, creationdate, title, viewcount
+ - answers: answerid, questionid, ownerid, creationdate, score
+ - users: userid, creationdate, location, reputation, upvotes
+ - questions_tags: questionid, tag
 
 ## Accessing a database from Python and R
 
@@ -44,7 +51,7 @@ Now consider how you would create database containing multiple tables with this 
 
 Python:
 
-```
+```python
 import duckdb
 dir = 'data' # relative or absolute path to where the .duckdb file is
 dbFilename = 'stackoverflow-2021.duckdb'  # possibly 'stackoverflow-2021-oldv.duckdb'
@@ -55,7 +62,7 @@ db.sql("select * from questions limit 5")
 
 To return a result as a dataframe:
 
-```
+```python
 db.sql("select * from questions limit 5").fetch_df()
 ```
 
@@ -95,6 +102,8 @@ select count(ownerid) as n from questions
 select sum(answercount) from questions
 ```
 
+Note that `count(<some_field_name>)` will not count NULL values, but `count(*)` will.
+
 ### Using distinct
 
 ```
@@ -114,4 +123,10 @@ select * from questions_tags where tag similar to 'r-%|%-r|r|%-r-%' limit 10
 select * from questions_tags where tag in ('java','r','python') limit 10
 ```
 
+## ChatBot prompt exercise
 
+Exercise: Let's discuss writing a prompt to give a Chatbot information about the database such that we could then ask questions about writing and understanding SQL queries on the database.
+
+We'll use [this Google doc](https://docs.google.com/document/d/1ROxuKs1leNgI4_lLw4pLHWjXK6Y6IJvIiMfhWXEcC_w/edit?usp=sharing) to collect ideas. 
+
+Once you have a prompt, try asking the Chatbot to explain some specific SQL query and see if the answer seems correct/helpful. 

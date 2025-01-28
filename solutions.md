@@ -87,7 +87,7 @@ select count(*) as n_users, avg_per_month from \
 #2
 
 ```
-select ownerid, tag, n from \
+select ownerid, tag, n, rank from \
     ( select ownerid, tag, n, rank() over (partition by ownerid order by n desc ) as rank from \
     ( select ownerid, tag, count(*) as n from questions Q join questions_tags T using(questionid) \
         group by ownerid, tag) ) where rank <= 3

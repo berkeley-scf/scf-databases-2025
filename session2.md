@@ -69,7 +69,7 @@ select * from questions Q left outer join answers A \
     on Q.questionid = A.questionid \
     where A.creationdate is NULL
     
-# Note no right outer join in SQLite so here we reverse order of answers and questions \
+# Note no right outer join in SQLite so here we would need to reverse order of answers and questions if done in SQLite.
 select * from questions Q right outer join answers A \
     on Q.questionid = A.questionid \
     where Q.creationdate is NULL
@@ -100,9 +100,13 @@ select QT1.tag, QT2.tag, count(*) as n from QT as QT1 join QT as QT2 \
     using(questionid) where QT1.tag < QT2.tag \
     group by QT1.tag, QT2.tag order by n desc limit 10
 
-
 select * from QT as QT1 join QT as QT2 using(ownerid)
+
+select QT1.ownerid from QT as QT1 join QT as QT2 using(questionid) \
+    where QT1.tag ='python' and QT2.tag='r'
 ```
+How does this last query differ from the similar query when we looked at set operations?
+
 
 ### Set operations
 
@@ -131,7 +135,10 @@ select userid, displayname, location from users \
     where reputation > 10
 ```
 
-### Subqueries
+One of those can be done without the set operation. Which one, and how?
+
+
+### Subqueries and with
 
 In small groups, discuss what these queries do.
 
@@ -146,7 +153,16 @@ select * from \
     on A.ownerid = most_responsive.ownerid
 ```
 
-
+```
+with most_responsive as (
+    select ownerid, count(*) as n_answered from answers
+        group by ownerid order by n_answered desc limit 1000
+    )
+select * from questions join answers A
+    on questions.questionid = A.questionid
+    join most_responsive on A.ownerid = most_responsive.ownerid
+```                
+                
 ```
 select avg(upvotes) from users \
     where userid in \
@@ -155,20 +171,23 @@ select avg(upvotes) from users \
     where tag = 'python' )
 ```
 
+
 ## Challenges: Joins, set operations, grouping and subqueries
+
+If you'd like to, use a Chatbot to explore some of these questions, trying to elicit the different ways to set up the query. But my suggestion is to reinforce your own understanding by trying to produce the query on your own. After that, checking with a Chatbot could be a good strategy.
 
 1. Find all the questions that have answers using:
    - a join
-   - a subquery
+   - a subquery (or `with`)
    - a set operation
 
 2. Find all the questions that have no answers using:
    - a join
-   - a subquery
+   - a subquery (or `with`)
    - a set operation
 
 3. Find the 10 most popular tags for unanswered questions.
-There are a variety of ways to do this using subqueries.
-Feel free to start by figuring out how to do it using views.
+There are a variety of ways to do this using subqueries or `with`.
+
 
 
